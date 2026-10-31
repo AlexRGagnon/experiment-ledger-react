@@ -1,0 +1,31 @@
+{
+  "name": "experiment-ledger-react",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.server.json && tsc -p tsconfig.client.json && vite build",
+    "start": "node dist/node/server/main.js",
+    "test": "npm run build && node --test dist/node/tests/*.test.js",
+    "test:browser": "npm run build && playwright test",
+    "format": "prettier --write client server shared tests e2e *.json *.ts *.html README.md",
+    "format:check": "prettier --check client server shared tests e2e *.json *.ts *.html README.md"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "@types/node": "22.15.30",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "vite": "8.3.5",
+    "@playwright/test": "1.64.1",
+    "prettier": "3.9.10"
+  }
+}
